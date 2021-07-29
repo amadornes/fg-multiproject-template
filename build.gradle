@@ -1,0 +1,26 @@
+subprojects {
+	configurations.all {
+		if (it.name.startsWith("_")) {
+			exclude group: "com.example", module: "examplelib"
+			return
+		}
+		
+		resolutionStrategy.dependencySubstitution {
+			substitute module("com.example:examplelib") using project(":examplelib")
+		}
+	}
+}
+
+project('runenv') {
+	ext {
+		mcversion = '1.17.1'
+		forgeversion = '37.0.13'
+	}
+	repositories {
+	}
+	dependencies {
+		// This is where any additional runtime dependencies for your dev environment go
+	}
+}
+
+

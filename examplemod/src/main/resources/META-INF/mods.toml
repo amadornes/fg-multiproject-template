@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[37,)"
+license="MIT"
+
+[[mods]]
+modId="examplemod"
+version="${file.jarVersion}"
+displayName="Example Mod"
+authors="Example Author"
+description='''
+This is an example mod
+'''
+
+[[dependencies.examplemod]]
+    modId="examplelib"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.examplemod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[37,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
