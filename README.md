@@ -26,8 +26,8 @@ Further customization can be done by either modifying the *runenv template*, or 
 root level buildscript.
 
 ## Generating runs
-The run configurations for your multiproject environment belong to the *runenv template*.  
-You must run that project's `setup<IDE>Runs` task and use its classpath at runtime.
+The run configurations for your multiproject environment should point to the *runenv template*.  
+You must run that project's `gen<IDE>Runs` task and use its classpath at runtime for all the projects to load.
 
 For datagen, you may still use each project's individual runs.
 
