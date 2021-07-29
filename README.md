@@ -2,8 +2,12 @@
 
 This repository provides a template for multiproject development environments using ForgeGradle.
 
-It builds upon the [runenv template](https://github.com/amadornes/fg-multiproject-runenv) repo to provide the binding
-logic that makes the multiproject environment work.
+## Project structure
+This template builds upon the [runenv template](https://github.com/amadornes/fg-multiproject-runenv) repo to provide the
+binding logic that makes the multiproject environment work.
+
+The built-in `examplelib` and `examplemod` projects are standard Forge MDK projects, heavily trimmed down for the sake
+of simplicity, and are unaware that they exist within a multiproject environment.
 
 ## Setup
 To set up a multiproject development environment, just clone this repository.  
