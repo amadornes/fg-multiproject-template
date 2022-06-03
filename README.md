@@ -35,9 +35,9 @@ You must run that project's `gen<IDE>Runs` task and use its classpath at runtime
 
 For datagen, you may still use each project's individual runs.
 
-## Known issues and currently untested features
+## Known issues
 Please check the [runenv template](https://github.com/amadornes/fg-multiproject-runenv) repository, as that will contain
-the latest information regarding compatibility. Further updates will most likely be pushed there.
+the latest information regarding compatibility.
 
 ## Contributions
 Pull requests adding extended feature support and bugfixes are welcome.  

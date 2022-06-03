@@ -1,26 +1,42 @@
+plugins {
+    id("org.jetbrains.gradle.plugin.idea-ext") version "1.1"
+}
+
 subprojects {
-	configurations.all {
-		if (it.name.startsWith("_")) {
-			exclude group: "com.example", module: "examplelib"
-			return
-		}
-		
-		resolutionStrategy.dependencySubstitution {
-			substitute module("com.example:examplelib") using project(":examplelib")
-		}
-	}
+    configurations.all {
+        if (it.name.startsWith("_")) {
+            // You must exclude the same modules you substitute here, because ForgeGradle
+            exclude group: "com.example", module: "examplelib"
+            return
+        }
+
+        resolutionStrategy.dependencySubstitution {
+            // Apply substitutions for modules your projects depend on, replacing them with another project
+            substitute module("com.example:examplelib") using project(":examplelib")
+        }
+    }
 }
 
 project('runenv') {
-	ext {
-		mcversion = '1.17.1'
-		forgeversion = '37.0.13'
-	}
-	repositories {
-	}
-	dependencies {
-		// This is where any additional runtime dependencies for your dev environment go
-	}
+    ext {
+        mcversion = '1.18.2'
+        forgeversion = '40.1.31'
+        // javaversion = 17 // Defaults to 17 already
+        // mappings = channel: 'official', version: '1.18.2' // Defaults to mojmap for the specified MC version
+        // runArgs = [ ] // Arguments applied to all runs
+        // runProps = [ name: value ] // Properties applied to all runs
+    }
+    repositories {
+        // Repositories for additional runtime dependencies go here
+    }
+    afterEvaluate {
+        dependencies {
+            // This is where any additional runtime dependencies for your dev environment go
+        }
+    }
 }
 
-
+// Ensure the run directory is excluded from the idea module
+idea.module {
+    excludeDirs << file("run")
+}
