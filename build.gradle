@@ -19,8 +19,8 @@ subprojects {
 
 project('runenv') {
     ext {
-        mcversion = '1.18.2'
-        forgeversion = '40.1.31'
+        mcversion = '1.19'
+        forgeversion = '41.1.0'
         // javaversion = 17 // Defaults to 17 already
         // mappings = channel: 'official', version: '1.18.2' // Defaults to mojmap for the specified MC version
         // runArgs = [ ] // Arguments applied to all runs
