@@ -15,7 +15,7 @@ version = _version
 group = 'com.example'
 archivesBaseName = 'ExampleLib'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
     mappings channel: 'official', version: _mcversion
