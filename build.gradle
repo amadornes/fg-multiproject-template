@@ -14,6 +14,13 @@ subprojects {
             // Apply substitutions for modules your projects depend on, replacing them with another project
             substitute module("com.example:examplelib") using project(":examplelib")
         }
+        
+        // Uncomment the following line if you are running into issues with dependency resolution.
+        // The reason is likely transitive dependencies bleeding into other projects and not
+        // being able to be resolved. Note that doing this will require you to manage certain
+        // kinds of dependencies (such as those needed at runtime) yourself:
+        //
+        // transitive false
     }
 }
 
